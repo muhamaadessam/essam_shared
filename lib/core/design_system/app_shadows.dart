@@ -8,10 +8,10 @@ class AppShadows {
   AppShadows._();
 
   // ===== Elevation Levels =====
-  
+
   /// No shadow.
   static const List<BoxShadow> none = [];
-  
+
   /// Extra small shadow (elevation 1).
   static const List<BoxShadow> xs = [
     BoxShadow(
@@ -21,7 +21,7 @@ class AppShadows {
       spreadRadius: 0,
     ),
   ];
-  
+
   /// Small shadow (elevation 2).
   static const List<BoxShadow> sm = [
     BoxShadow(
@@ -31,7 +31,7 @@ class AppShadows {
       spreadRadius: 0,
     ),
   ];
-  
+
   /// Medium shadow (elevation 4).
   static const List<BoxShadow> md = [
     BoxShadow(
@@ -41,7 +41,7 @@ class AppShadows {
       spreadRadius: 0,
     ),
   ];
-  
+
   /// Large shadow (elevation 8).
   static const List<BoxShadow> lg = [
     BoxShadow(
@@ -51,7 +51,7 @@ class AppShadows {
       spreadRadius: 0,
     ),
   ];
-  
+
   /// Extra large shadow (elevation 16).
   static const List<BoxShadow> xl = [
     BoxShadow(
@@ -63,21 +63,21 @@ class AppShadows {
   ];
 
   // ===== Colored Shadows =====
-  
+
   /// Primary color shadow.
   static List<BoxShadow> primary(Color color, {double opacity = 0.2}) => [
         BoxShadow(
-          color: color.withOpacity(opacity),
+          color: color.withValues(alpha: opacity),
           offset: const Offset(0, 4),
           blurRadius: 12,
           spreadRadius: 0,
         ),
       ];
-  
+
   /// Error color shadow.
   static List<BoxShadow> error(Color color, {double opacity = 0.2}) => [
         BoxShadow(
-          color: color.withOpacity(opacity),
+          color: color.withValues(alpha: opacity),
           offset: const Offset(0, 4),
           blurRadius: 12,
           spreadRadius: 0,
@@ -85,19 +85,19 @@ class AppShadows {
       ];
 
   // ===== Common Shadow Values =====
-  
+
   /// Shadow for cards.
   static const List<BoxShadow> card = sm;
-  
+
   /// Shadow for buttons.
   static const List<BoxShadow> button = sm;
-  
+
   /// Shadow for dialogs.
   static const List<BoxShadow> dialog = lg;
-  
+
   /// Shadow for floating action buttons.
   static const List<BoxShadow> fab = md;
-  
+
   /// Shadow for navigation bars.
   static const List<BoxShadow> navbar = xs;
 }
@@ -111,10 +111,10 @@ extension BoxShadowExtension on BoxShadow {
         blurRadius: blurRadius,
         spreadRadius: spreadRadius,
       );
-  
+
   /// Creates a copy of this shadow with a new opacity.
   BoxShadow withOpacity(double opacity) => BoxShadow(
-        color: color.withOpacity(opacity),
+        color: color.withValues(alpha: opacity),
         offset: offset,
         blurRadius: blurRadius,
         spreadRadius: spreadRadius,

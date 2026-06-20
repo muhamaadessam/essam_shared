@@ -80,6 +80,9 @@ class AppColors {
   @Deprecated('Use textSecondary instead')
   static const Color secondTextColor = textSecondary;
 
+  @Deprecated('Use border instead')
+  static const Color borderColor = border;
+
   @Deprecated('Use darkScaffold instead')
   static const Color darkScaffoldBackgroundColor = darkScaffold;
 
